@@ -19,7 +19,7 @@ class Player{
     }
 
     draw(){
-        c.fillStyle = 'red'
+        c.fillStyle = 'black'
         c.fillRect(this.position.x,this.position.y,this.height,this.width)
     }
     update() {
