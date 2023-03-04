@@ -4,7 +4,7 @@ const c = canvas.getContext('2d')
 canvas.width = innerWidth
 canvas.height = innerHeight
 
-const gravity = 4.5
+const gravity = 2
 
 class Player{
     constructor(){
@@ -53,7 +53,7 @@ class  Platform{
 }
 const player = new Player()
 
-const platforms=[new Platform({x:200,y:100}),new Platform({x:400,y:200})]
+const platforms=[new Platform({x:200,y:500}),new Platform({x:500,y:500})]
 
 const keys = {
     right: {
@@ -71,17 +71,16 @@ function animate(){
     player.update()
     platforms.forEach(platform=>{
         platform.draw()
-    
-        if (keys.right.pressed && player.position.x < 400) {
-            player.velocity.x = 5
-        }
-        else if (keys.left.pressed && player.position.x >100) {
-            player.velocity.x = -5
-        } 
-        else{
-            player.velocity.x = 0
-
-            if(keys.right.pressed){
+    })
+    if (keys.right.pressed && player.position.x < 400) {
+        player.velocity.x = 5
+    }
+    else if (keys.left.pressed && player.position.x >100) {
+        player.velocity.x = -5
+    } 
+    else{
+        player.velocity.x = 0
+        if(keys.right.pressed){
                 platforms.forEach((platform)=>{
                     platform.position.x-=5
                 })
@@ -92,14 +91,14 @@ function animate(){
                 })
             }
         } 
-    })
-    if(scrollOffset>200){
+
+    if(scrollOffset>1000){
         console.log('you win')
     }
-}
+
     
 
-platforms.forEach(platform=>{
+    platforms.forEach(platform=>{
     if(player.position.y+player.height<=platform.position.y && 
         player.position.y+player.height+player.velocity.y>=
         platform.position.y && player.position.x+player.width>=
@@ -108,11 +107,11 @@ platforms.forEach(platform=>{
         }
     })
 
-
+}
 animate()
 
 addEventListener('keydown',  ({ keyCode }) => {
-    console.log(keyCode)
+    //console.log(keyCode)
     switch (keyCode) {
         case 65:
             console.log('left')
@@ -136,7 +135,7 @@ addEventListener('keydown',  ({ keyCode }) => {
 })
 
 addEventListener('keyup',  ({ keyCode }) => {
-    console.log(keyCode)
+    //console.log(keyCode)
     switch (keyCode) {
         case 65:
             console.log('left')
