@@ -3,3 +3,11 @@ The Mario game project using JavaScript and HTML canvas is a popular project for
 To create the game, you would use HTML to create the structure of the game, including the canvas element where the game will be displayed. You would then use JavaScript to handle the game's logic, including detecting player input, controlling Mario's movements, and determining collisions with obstacles and enemies.
 
 Creating a Mario game using JavaScript and HTML canvas can be a fun and challenging project that allows you to develop your skills in web development and game programming
+
+
+
+# How to contribute
+1. Fork the repo
+2. Make necessary changes
+3. Commit your changes
+4. Send a pull request
