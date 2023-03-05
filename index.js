@@ -103,7 +103,7 @@ function animate(){
     }
 
     if(player.position.y>canvas.height){
-        init()
+        alert("Game lost")
     }
 
     platforms.forEach(platform=>{
