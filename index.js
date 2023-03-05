@@ -75,7 +75,7 @@ function animate(){
     if (keys.right.pressed && player.position.x < 400) {
         player.velocity.x = 5
     }
-    else if (keys.left.pressed && player.position.x <100) {
+    else if (keys.left.pressed && player.position.x >100) {
         player.velocity.x = -5
     } 
     else{
@@ -86,7 +86,7 @@ function animate(){
                     platform.position.x-=5
                 })
             }
-            else if(keys.left.pressed){
+            else if(keys.left.presed){
                 scrollOffset -= 5
                 platforms.forEach((platform)=>{
                     platform.position.x+=5
