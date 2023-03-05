@@ -1,11 +1,10 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
-canvas.width = innerWidth
-canvas.height = innerHeight
+canvas.width = 1026
+canvas.height = 576
 
-const gravity = 2
-
+const gravity = 3
 class Player{
     constructor(){
         this.position = {
@@ -44,7 +43,7 @@ class  Platform{
             y
          }
         this.width=200
-        this.height=20
+        this.height=20+0
     }
     draw(){
         c.fillStyle='grey'
@@ -53,7 +52,7 @@ class  Platform{
 }
 const player = new Player()
 
-const platforms=[new Platform({x:200,y:500}),new Platform({x:500,y:600})]
+const platforms=[new Platform({x:0,y:470}),new Platform({x:250,y:400})]
 
 const keys = {
     right: {
@@ -67,7 +66,8 @@ const keys = {
 
 function animate(){
     requestAnimationFrame(animate)
-    c.clearRect(0,0,canvas.width,canvas.height)
+    c.fillStyle='green'
+    c.fillRect(0,0,canvas.width,canvas.height)
     player.update()
     platforms.forEach(platform=>{
         platform.draw()
